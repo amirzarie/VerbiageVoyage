@@ -84,19 +84,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'HOST': 'localhost',
-#         'NAME': 'verbiagevoyage',
-#         'OPTIONS': {
-#             'service': 'my_service',
-#             'passfile': '.my_pgpass'
-#         }
-#     }
-# }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
