@@ -73,15 +73,28 @@ WSGI_APPLICATION = 'VerbiageVoyage.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+from VerbiageVoyage.secrets import password
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'verbiagevoyage',
         'USER': 'postgres',
-        'PASSWORD': '',
+        'PASSWORD': password,
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'HOST': 'localhost',
+#         'NAME': 'verbiagevoyage',
+#         'OPTIONS': {
+#             'service': 'my_service',
+#             'passfile': '.my_pgpass'
+#         }
+#     }
+# }
 
 
 # Password validation
