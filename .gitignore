@@ -3,4 +3,4 @@ venv
 __pycache__/
 *.pyc
 *.pyo
-VerbiageVoyage/settings.py
+VerbiageVoyage/VerbiageVoyage/settings.py
