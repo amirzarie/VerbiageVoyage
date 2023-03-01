@@ -19,8 +19,9 @@
                     <li><a href="/" class="left brand-logo">&nbsp;&nbsp;VerbiageVoyage</a></li>
                 </ul>
                 <ul class="right">
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/verbiages">View All My Verbiages</a></li>
+                    <li><a href={% url "about" %}>About</a></li>
+                    <li><a href="{% url 'verbiages_create' %}">Add a Verbiage</a></li>
+                    <li><a href={% url "verbiages_index" %}>View All My Verbiages</a></li>
                 </ul>
             </div>
         </nav>
