@@ -7,5 +7,5 @@ class Verbiage(models.Model):
     definition = models.TextField(max_length=250)
 
     def __str__(self):
-        return f"{self.name} ({self.language}): {self.definition}"
+        return f"{self.word} ({self.language}): {self.definition}"
 

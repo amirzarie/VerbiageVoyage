@@ -5,10 +5,12 @@
 
 {% for verbiage in verbiages %}
   <div class="card">
-    <div class="card-content">
-      <span class="card-title">{{ verbiage.word }} ({{ verbiage.language }})</span>
-      <p>Definition: {{ verbiage.definition }}</p>
-    </div>
+      <div class="card-content">
+          <a href="">
+            <span class="card-title">{{ verbiage.word }} ({{ verbiage.language }})</span>
+          </a>
+          <p>Definition: {{ verbiage.definition }}</p>
+      </div>
   </div>
 {% endfor %}
 

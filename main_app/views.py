@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Verbiage
 
 # class Verbiage:  # Note that parens are optional if not inheriting from another class
 #   def __init__(self, word, language, definition):
@@ -30,4 +31,5 @@ def about(request):
 
 
 def verbiages_index(request):
+    verbiages = Verbiage.objects.all()
     return render(request, 'verbiages/index.html', {'verbiages': verbiages})
