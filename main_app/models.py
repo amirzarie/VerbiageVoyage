@@ -19,4 +19,4 @@ class Etymology(models.Model):
     verbiage = models.ForeignKey(Verbiage, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"First appeared on {self.date}. Example sentence: {self.example}"
+        return f"Example sentence: {self.example} (appeared on {self.date})."
