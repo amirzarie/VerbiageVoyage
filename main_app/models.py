@@ -13,3 +13,10 @@ class Verbiage(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'verbiage_id': self.id})
 
+class Etymology(models.Model):
+    date = models.IntegerField()
+    example = models.TextField(max_length=250)
+    verbiage = models.ForeignKey(Verbiage, on_delete=models.CASCADE)
+
+    def __stre__(self):
+        return f"First appeared on {self.date}. Example sentence: {self.example}"
