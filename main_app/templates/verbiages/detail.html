@@ -17,22 +17,26 @@
             </div>
         </div>
         <div class="col s6">
-            <table class="striped">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Example</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for etymology in verbiage.etymology_set.all %}
+            <form method="post">
+                {% csrf_token %} {{ etymology_form.as_p }}
+                <input type="submit" class="btn" value="Add Etymology">
+            </form>
+                <table class="striped">
+                    <thead>
                         <tr>
-                            <td>{{ etymology.date }}</td>
-                            <td>{{ etymology.example }}</td>
+                            <th>Date</th>
+                            <th>Example</th>
                         </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {% for etymology in verbiage.etymology_set.all %}
+                            <tr>
+                                <td>{{ etymology.date }}</td>
+                                <td>{{ etymology.example }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
         </div>
     </div>
 

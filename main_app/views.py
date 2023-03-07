@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Verbiage
+from .forms import EtymolodyForm
 
 
 class VerbiageList(ListView):
@@ -19,7 +20,8 @@ def about(request):
 
 def verbiages_detail(request, verbiage_id):
     verbiage = Verbiage.objects.get(id=verbiage_id)
-    return render(request, 'verbiages/detail.html', { 'verbiage': verbiage })
+    etymology_form = EtymolodyForm()
+    return render(request, 'verbiages/detail.html', { 'verbiage': verbiage, "etymology_form": etymology_form })
 
 
 class VerbiageCreate(CreateView):
