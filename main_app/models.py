@@ -20,3 +20,7 @@ class Etymology(models.Model):
 
     def __str__(self):
         return f"Example sentence: {self.example} (appeared on {self.date})."
+
+
+    class Meta:
+        ordering = ['-date']

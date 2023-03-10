@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Verbiage
@@ -37,3 +37,12 @@ class VerbiageUpdate(UpdateView):
 class VerbiageDelete(DeleteView):
   model = Verbiage
   success_url = '/verbiages/'
+
+
+def add_etymology(request, verbiage_id):
+    form = EtymolodyForm(request.POST)
+    if form.is_valid():
+        new_etymology = form.save(commit=False)
+        new_etymology.verbiage_id = verbiage_id
+        new_etymology.save()
+    return redirect('detail', verbiage_id=verbiage_id)
