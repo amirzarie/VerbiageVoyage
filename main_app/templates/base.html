@@ -21,8 +21,10 @@
                 </ul>
                 <ul class="right">
                     <li><a href={% url "about" %}>About</a></li>
-                    <li><a href="{% url 'verbiages_create' %}">Add a Verbiage</a></li>
+                    <li><a href={% url "verbiages_create" %}>Add a Verbiage</a></li>
                     <li><a href={% url "verbiages_index" %}>View All My Verbiages</a></li>
+                    <li><a href={% url "facts_create" %}>Add Fun Facts</a></li>
+                    <li><a href={% url "facts_index" %}>View All Fun Facts</a></li>
                 </ul>
             </div>
         </nav>

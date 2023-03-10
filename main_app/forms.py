@@ -5,4 +5,4 @@ from .models import Etymology
 class EtymolodyForm(ModelForm):
     class Meta:
         model = Etymology
-        fields = ["date", "example"]
+        fields = ["year", "example"]

@@ -24,14 +24,14 @@
                 <table class="striped">
                     <thead>
                         <tr>
-                            <th>Date</th>
+                            <th>Year</th>
                             <th>Example</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for etymology in verbiage.etymology_set.all %}
                             <tr>
-                                <td>{{ etymology.date }}</td>
+                                <td>{{ etymology.year }}</td>
                                 <td>{{ etymology.example }}</td>
                             </tr>
                         {% endfor %}

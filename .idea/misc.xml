@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/main_app/migrations/0001_initial.py" />
+    <file url="file://$PROJECT_DIR$/main_app/migrations/0002_etymology.py" />
+    <file url="file://$PROJECT_DIR$/main_app/migrations/0003_rename_year_etymology_date.py" />
+    <file url="file://$PROJECT_DIR$/main_app/migrations/0004_fact_alter_etymology_options.py" />
+    <file url="file://$PROJECT_DIR$/main_app/migrations/0005_alter_etymology_options_rename_date_etymology_year_and_more.py" />
+  </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (VerbiageVoyage)" project-jdk-type="Python SDK" />
 </project>
