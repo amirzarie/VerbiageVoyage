@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Verbiage, Fact
 from .forms import EtymolodyForm
@@ -29,12 +29,12 @@ def verbiages_detail(request, verbiage_id):
 
 class VerbiageCreate(CreateView):
     model = Verbiage
-    fields = '__all__'
+    fields = ["word", "language", "definition"]
 
 
 class VerbiageUpdate(UpdateView):
   model = Verbiage
-  fields = '__all__'
+  fields = ["word", "language", "definition"]
 
 
 class VerbiageDelete(DeleteView):
@@ -52,7 +52,7 @@ def add_etymology(request, verbiage_id):
 
 
 def assoc_fact(request, verbiage_id, fact_id):
-    Verbiage.objects.get(id=fact_id).facts.add(fact_id)
+    Verbiage.objects.get(id=verbiage_id).facts.add(fact_id)
     return redirect('detail', verbiage_id=verbiage_id)
 
 
@@ -72,13 +72,13 @@ class FactUpdate(UpdateView):
 
 class FactDelete(DeleteView):
     model = Fact
-    success_url = '/facts/'
+    success_url = "/facts/"
 
 
 class FactCreate(CreateView):
     model = Fact
-    fields = '__all__'
+    fields = ["fact"]
 
 
-class FactDetail(DeleteView):
+class FactDetail(DetailView):
     model = Fact

@@ -8,8 +8,9 @@ class Fact(models.Model):
     def __str__(self):
         return self.fact
 
-    def get_absolut_url(self):
+    def get_absolute_url(self):
         return reverse('facts_detail', kwargs={'pk': self.id})
+
 
 class Verbiage(models.Model):
     word = models.CharField(max_length=50)
