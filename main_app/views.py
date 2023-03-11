@@ -20,11 +20,11 @@ def about(request):
 
 def verbiages_detail(request, verbiage_id):
     verbiage = Verbiage.objects.get(id=verbiage_id)
-    facts_verbiage_doesn_have = Fact.objects.exclude(id__in=verbiage.facts.all().values_list('id'))
+    facts_verbiage_doesnt_have = Fact.objects.exclude(id__in=verbiage.facts.all().values_list('id'))
     etymology_form = EtymolodyForm()
     return render(request, 'verbiages/detail.html', { "verbiage": verbiage,
                                                       "etymology_form": etymology_form,
-                                                      "facts": facts_verbiage_doesn_have})
+                                                      "facts": facts_verbiage_doesnt_have})
 
 
 class VerbiageCreate(CreateView):
